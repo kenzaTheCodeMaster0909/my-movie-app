@@ -1,8 +1,9 @@
 import * as React from "react";
 import { Box, Typography } from "@mui/material";
 import Grid2 from "@mui/material/Grid2";
-import movie1Image from "../asset/inception.jpg";
-import movie2Image from "../asset/interstellar.jpg";
+
+const movie1Image = "../asset/inception.jpg";
+const movie2Image = "../asset/interstellar.jpg";
 const movies = [
   { id: 1, title: "Inception", image: movie1Image },
   {

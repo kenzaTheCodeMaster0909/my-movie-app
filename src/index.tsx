@@ -1,5 +1,5 @@
 import React from "react";
-import App from "./App.tsx";
+import App from "./App";
 
 import ReactDOM from "react-dom/client"; // Importation correcte de ReactDOM en React 18+
 
