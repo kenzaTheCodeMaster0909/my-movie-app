@@ -31,6 +31,8 @@ const Search = styled("div")(({ theme }) => ({
     marginLeft: theme.spacing(3),
     width: "auto",
   },
+  flexGrow: 0.75,
+  justifySelf: "flex-end",
 }));
 
 const SearchIconWrapper = styled("div")(({ theme }) => ({
@@ -87,7 +89,13 @@ function ResponsiveAppBar() {
       sx={{ backgroundColor: "transparent", boxShadow: "none" }}
     >
       <Container maxWidth="xl">
-        <Toolbar disableGutters>
+        <Toolbar
+          disableGutters
+          sx={{
+            display: "flex !important",
+            justifyContent: "space-between",
+          }}
+        >
           {/* organise les element dans la barre */}
           <Typography
             variant="h6"
@@ -107,6 +115,7 @@ function ResponsiveAppBar() {
             {/* affichage du texte , nowrap pour que le texte soit dans la mm ligne  */}
             Ngflix
           </Typography>
+          {/** mobile menu */}
           <Box sx={{ flexGrow: 1, display: { xs: "flex", lg: "none" } }}>
             <IconButton
               size="large"
@@ -142,6 +151,7 @@ function ResponsiveAppBar() {
               ))}
             </Menu>
           </Box>
+          {/** desktop menu */}
           <Typography
             variant="h5"
             noWrap
@@ -161,18 +171,8 @@ function ResponsiveAppBar() {
             Ngflix
           </Typography>
 
-          <Search>
-            <SearchIconWrapper>
-              <SearchIcon />
-            </SearchIconWrapper>
-            <StyledInputBase
-              placeholder="Search…"
-              inputProps={{ "aria-label": "search" }}
-            />
-          </Search>
           <Box
             sx={{
-              flexGrow: 1,
               display: { xs: "none", lg: "flex" },
             }}
           >
@@ -186,6 +186,16 @@ function ResponsiveAppBar() {
               </Button>
             ))}
           </Box>
+
+          <Search>
+            <SearchIconWrapper>
+              <SearchIcon />
+            </SearchIconWrapper>
+            <StyledInputBase
+              placeholder="Search…"
+              inputProps={{ "aria-label": "search" }}
+            />
+          </Search>
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>

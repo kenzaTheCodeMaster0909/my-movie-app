@@ -5,7 +5,7 @@ import { NewMovie } from "./components/newMovie";
 import { ButtonMovie } from "./components/buttonMovie";
 import MovieList from "./components/movieList";
 function App() {
-  const backgroundImage = "./asset/movie1.jpg";
+  const backgroundImage = "/assets/movie1.jpg";
   return (
     <Box
       sx={{
