@@ -1,0 +1,24 @@
+{
+  "compilerOptions": {
+    "target": "esnext",                     // Use 'esnext' to target modern JavaScript features
+    "lib": ["dom", "dom.iterable", "esnext"], // Include modern DOM and ECMAScript libraries
+    "module": "esnext",                     // Use ESNext modules, preferred by Vite
+    "moduleResolution": "node",             // Resolve modules in Node.js style
+    "strict": true,                         // Enable all strict type-checking options
+    "esModuleInterop": true,                // Enables compatibility with CommonJS modules
+    "skipLibCheck": true,                   // Skip checking of declaration files for faster compilation
+    "forceConsistentCasingInFileNames": true, // Ensures consistent file naming
+    "allowSyntheticDefaultImports": true,   // Support synthetic imports for compatibility with non-ES6 modules
+    "jsx": "preserve",                      // Needed for Vite + React (if using JSX); can change to "react-jsx" for React
+    "noEmit": true,                         // Prevent emitting compiled files, as Vite handles this
+    "isolatedModules": true,                // Helps Vite by treating each file as a module
+    "resolveJsonModule": true,              // Enables importing JSON files as modules
+    "types": ["vite/client"],               // Include Vite client types for development
+    "baseUrl": ".",                         // Allows using absolute imports relative to the base path
+    "paths": {
+      "@/*": ["src/*"]                      // Alias for cleaner imports (adjust if needed)
+    }
+  },
+  "include": ["src"],                       // Include only the source files
+  "exclude": ["node_modules", "dist"]       // Exclude node_modules and dist directories
+}
